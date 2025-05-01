@@ -7,7 +7,11 @@ export default function App() {
     "カメラレンズを購入したはずが。被害額は2万円超えです。どういった経緯で詐欺に遭ったのか、どのような対応をしたかとともに、フリマアプリで同様の被害に合わない方法をお伝えします。";
   return (
     <View style={styles.container}>
-      <ListItem />
+      <ListItem
+        imageUrl="https://picsum.photos/seed/picsum/300/300"
+        title={testText}
+        subTitle="集英社"
+      />
       <StatusBar style="auto" />
     </View>
   );

@@ -1,22 +1,23 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Image, View, Text } from "react-native";
 
-export const ListItem = () => {
-  const testText =
-    "カメラレンズを購入したはずが。被害額は2万円超えです。どういった経緯で詐欺に遭ったのか、どのような対応をしたかとともに、フリマアプリで同様の被害に合わない方法をお伝えします。";
+type Props = {
+  imageUrl?: string;
+  title?: string;
+  subTitle?: string;
+};
+
+export const ListItem = ({ imageUrl, title, subTitle }: Props) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
-        <Image
-          style={{ height: 90, width: 90, borderRadius: 10 }}
-          source={{ uri: "https://picsum.photos/seed/picsum/300/300" }}
-        />
+        <Image style={{ height: 90, width: 90, borderRadius: 10 }} source={{ uri: imageUrl }} />
       </View>
       <View style={styles.rightContainer}>
         <Text style={styles.text} numberOfLines={4}>
-          {testText}
+          {title}
         </Text>
-        <Text style={styles.subText}>集英社</Text>
+        <Text style={styles.subText}>{subTitle}</Text>
       </View>
     </View>
   );
