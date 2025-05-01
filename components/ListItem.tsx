@@ -1,25 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Image, View, Text } from "react-native";
-import { ListItem } from "./components/ListItem";
 
-export default function App() {
+export const ListItem = () => {
   const testText =
     "カメラレンズを購入したはずが。被害額は2万円超えです。どういった経緯で詐欺に遭ったのか、どのような対応をしたかとともに、フリマアプリで同様の被害に合わない方法をお伝えします。";
   return (
-    <View style={styles.container}>
-      <ListItem />
-      <StatusBar style="auto" />
+    <View style={styles.itemContainer}>
+      <View style={styles.leftContainer}>
+        <Image
+          style={{ height: 90, width: 90, borderRadius: 10 }}
+          source={{ uri: "https://picsum.photos/seed/picsum/300/300" }}
+        />
+      </View>
+      <View style={styles.rightContainer}>
+        <Text style={styles.text} numberOfLines={4}>
+          {testText}
+        </Text>
+        <Text style={styles.subText}>集英社</Text>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   itemContainer: {
     height: 100,
     width: "100%",
