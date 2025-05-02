@@ -25,7 +25,7 @@ export const ListItem = ({ imageUrl, title, subTitle }: Props) => {
 
 const styles = StyleSheet.create({
   itemContainer: {
-    height: 100,
+    minHeight: 100,
     width: "100%",
     backgroundColor: "#f0f0f0",
     flexDirection: "row",
