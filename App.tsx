@@ -1,17 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Image, View, Text } from "react-native";
 import { ListItem } from "./components/ListItem";
+import articles from "./dummies/articles.json";
 
 export default function App() {
-  const testText =
-    "カメラレンズを購入したはずが。被害額は2万円超えです。どういった経緯で詐欺に遭ったのか、どのような対応をしたかとともに、フリマアプリで同様の被害に合わない方法をお伝えします。";
+  const items = articles.map((article, index) => (
+    <ListItem
+      key={index.toString()}
+      imageUrl={article.urlToImage}
+      title={article.title}
+      subTitle={article.author}
+    />
+  ));
+
   return (
     <View style={styles.container}>
-      <ListItem
-        imageUrl="https://picsum.photos/seed/picsum/300/300"
-        title={testText}
-        subTitle="集英社"
-      />
+      {items}
       <StatusBar style="auto" />
     </View>
   );
